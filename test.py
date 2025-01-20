@@ -1,3 +1,15 @@
-print('Hello, this is my first file in repository')
+from dataclasses import dataclass
 
-print('Hello, this is for commites')
+@dataclass
+class Person:
+
+    name: str
+    age: int
+    e_mail: str
+
+
+def get_user_info(person: Person) -> str:
+    return f'Name: {person.name}, age: {person.age}, e-mail: {person.e_mail}'
+
+
+print(get_user_info(Person('Max', 25, 'max@ya.ru')))
